@@ -1,0 +1,14 @@
+{
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/",
+            "App\\Middleware\\": "src/Middleware/",
+            "Services\\": "src/Services/",
+            "Controllers\\": "src/Controllers/",
+            "Routes\\": "src/routes/"
+        }
+    },
+    "require": {
+        "phpmailer/phpmailer": "^6.9"
+    }
+}
