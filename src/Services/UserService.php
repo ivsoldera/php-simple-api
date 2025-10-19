@@ -249,14 +249,6 @@ class UserService {
 		return $this->db->sql("SELECT * FROM users WHERE ( email = '$value' or username = '$value' ) and deleted_at is null LIMIT 1");
 	}
 
-	public function getUserFromClothoffWebhook($idGen){
-	  $idGen = addslashes($idGen);
-
-	  return $this->db->sql("SELECT m.user_id, u.username FROM media m 
-							JOIN users u ON m.user_id = u.id 
-							WHERE m.id = '$idGen' LIMIT 1");
-	}
-
     public function deleteAccount($userId){
         $userId = addslashes($userId);
         return $this->db->sql("UPDATE users SET deleted_at = NOW() WHERE id = '$userId' and deleted_at is null");
